@@ -3,6 +3,7 @@ import AppRouter from "./Router";
 function App() {
   return (
     <>
+    <h2>Hello World</h2>
     <AppRouter />
     </>
   )
