@@ -6,7 +6,7 @@ import Home from "./pages/Home/Home";
 import Question from "./pages/Question/Question";
 import Answer from "./pages/Answer/Answer";
 import Howitworks from "./pages/Howitworks/Howitworks";
-import NotFound from "./pages/NotFound/Four04";
+import NotFound from "./pages/Notfound/NotFound";
 function AppRouter() {
   return (
     <Routes>
