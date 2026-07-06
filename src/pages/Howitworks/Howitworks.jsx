@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./HowItWorks.module.css";
+import classes from "./howitworks.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
@@ -10,7 +10,7 @@ import { faShare } from "@fortawesome/free-solid-svg-icons";
 import { faUserSlash } from "@fortawesome/free-solid-svg-icons";
 import { faHeadset } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-const HowItWorks = () => {
+const howitworks = () => {
   return (
     <div className={classes.howto_container}>
       <h1 className={classes.howto_title}>How to Use Evangadi Networks Q&A</h1>
@@ -24,9 +24,7 @@ const HowItWorks = () => {
           these steps:
         </p>
         <ul>
-          <li>
-            Click on the "Sign In" button in the top-right corner.
-          </li>
+          <li>Click on the "Sign In" button in the top-right corner.</li>
           <li>Switch to the "Create a new account" form.</li>
           <li>
             Fill in the required fields: Username, First Name, Last Name, Email,
@@ -136,4 +134,4 @@ const HowItWorks = () => {
   );
 };
 
-export default HowItWorks;
+export default howitworks;

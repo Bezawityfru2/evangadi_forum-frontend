@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Question from "./pages/Question/Question";
 import Answer from "./pages/Answer/Answer";
-import Howitworks from "./pages/Howitworks/Howitworks";
+import Howitworks from "./pages/Howitworks/howitworks";
 import NotFound from "./pages/Notfound/NotFound";
 function AppRouter() {
   return (
