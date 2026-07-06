@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./howitworks.module.css";
+import classes from "./Howitworks.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
@@ -10,7 +10,7 @@ import { faShare } from "@fortawesome/free-solid-svg-icons";
 import { faUserSlash } from "@fortawesome/free-solid-svg-icons";
 import { faHeadset } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-const howitworks = () => {
+const Howitworks = () => {
   return (
     <div className={classes.howto_container}>
       <h1 className={classes.howto_title}>How to Use Evangadi Networks Q&A</h1>
@@ -134,4 +134,4 @@ const howitworks = () => {
   );
 };
 
-export default howitworks;
+export default Howitworks;
