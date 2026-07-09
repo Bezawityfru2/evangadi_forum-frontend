@@ -21,7 +21,7 @@ function Login({ visible }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
+    console.log("handleSubmit is running");
     setIsLoading(true);
     setErrorMessage("");
 
@@ -67,7 +67,9 @@ function Login({ visible }) {
 
       if (error.response) {
         console.log("Status:", error.response.data);
-        setErrorMessage(error.response.data.message || "Somethings went wrong.");
+        setErrorMessage(
+          error.response.data.message || "Somethings went wrong.",
+        );
       } else if (error.request) {
         console.log("NO RESPONSE:", error.request);
         setErrorMessage("Server not responding.");
