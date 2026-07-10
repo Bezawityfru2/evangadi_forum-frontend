@@ -3,7 +3,7 @@ import Layout from "./pages/Layout/Layout";
 import Landing from "./pages/Landing/Landing";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import Question from "./pages/Question/Question";
+import Question from "./pages/Question/Questions";
 import Answer from "./pages/Answer/Answer";
 import Howitworks from "./pages/Howitworks/Howitworks";
 import NotFound from "./pages/Notfound/NotFound";

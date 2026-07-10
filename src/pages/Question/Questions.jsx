@@ -7,7 +7,7 @@ import instance from "../../api/axios";
 import { ClipLoader } from "react-spinners";
 import { AppContext } from "../../components/DataContext/DataContext"; // Import AppContext
 
-const Question = () => {
+const Questions = () => {
   const [alertMessage, setAlertMessage] = useState("");
   const [alertType, setAlertType] = useState("");
   const [isloading, setIsLoading] = useState(false);
@@ -38,7 +38,7 @@ const Question = () => {
       const response = await instance.post(
         "/questions",
         { title, description },
-        { headers: { Authorization: "Bearer " + token } }
+        { headers: { Authorization: "Bearer " + token } },
       );
       setIsLoading(false);
       setAlertMessage("Your question was posted successfully!");
@@ -52,7 +52,7 @@ const Question = () => {
         username: user, // Use username from AppContext
         created_at: new Date().toISOString(), // Approximate created_at
       };
-          console.log("Token in localStorage:", localStorage.getItem("token"));
+      console.log("Token in localStorage:", localStorage.getItem("token"));
 
       // Redirect to home page with new question in state
       setTimeout(() => {
@@ -146,4 +146,4 @@ const Question = () => {
   );
 };
 
-export default Question;
+export default Questions;
