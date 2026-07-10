@@ -21,7 +21,7 @@ function Login({ visible }) {
   async function handleSubmit(e) {
     e.preventDefault();
     console.log("🚀 HANDLE SUBMIT WORKING");
-    console.log("Base URL:", instance.defaults.baseURL);
+    
 
     setIsLoading(true);
     setErrorMessage("");
@@ -37,6 +37,7 @@ function Login({ visible }) {
 
     try {
       // ====  FIX 1: use POST not GET
+      console.log("Base URL:", instance.defaults.baseURL);
       const response = await instance.post("/users/login", {
         email: emailValue,
         password: passwordValue,
