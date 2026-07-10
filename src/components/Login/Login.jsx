@@ -5,7 +5,6 @@ import { useContext, useRef, useState } from "react";
 import { AppContext } from "../DataContext/DataContext";
 import { BiHide, BiShow } from "react-icons/bi";
 import { ClipLoader } from "react-spinners";
-import axios from "axios";
 
 function Login({ visible }) {
   const { setShow } = visible || {};
@@ -21,7 +20,9 @@ function Login({ visible }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log("handleSubmit is running");
+    console.log("🚀 HANDLE SUBMIT WORKING");
+    console.log("Base URL:", instance.defaults.baseURL);
+
     setIsLoading(true);
     setErrorMessage("");
 
