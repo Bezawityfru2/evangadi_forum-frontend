@@ -32,7 +32,7 @@ const SignUp = ({ visible }) => {
     }
     console.log({ username, firstname, lastname, email, password });
     try {
-      const response = await instance.post("users/register", {
+      const response = await instance.post("/users/register", {
         username: username,
         first_name: firstname,
         last_name: lastname,
