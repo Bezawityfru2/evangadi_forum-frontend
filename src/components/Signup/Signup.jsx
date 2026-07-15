@@ -32,26 +32,31 @@ const SignUp = ({ visible }) => {
     }
     console.log({ username, firstname, lastname, email, password });
     try {
+      setIsLoading(true);
       const response = await instance.post("/users/register", {
-        username: username,
-        first_name: firstname,
-        last_name: lastname,
-        email: email,
-        password: password,
+        username,
+        firstname,
+        lastname,
+        email,
+        password,
       });
-      console.log("User Registered:", response.data);
-      setIsLoading(false);
+      console.log(response.data);
+
+      setUserName("");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPassword("");
+
       setShow(false);
       navigate("/login");
     } catch (error) {
+      setError(error.response?.data?.message || "An unexpected error occurred");
+    } finally {
       setIsLoading(false);
-      if (error.response) {
-        setError(
-          error.response?.data?.message || "An unexpected error occurred",
-        ); // Show server error message
-      }
     }
   };
+
   return (
     <div className={Classes.signup_container}>
       <h2>Join the network</h2>
@@ -68,7 +73,7 @@ const SignUp = ({ visible }) => {
             value={username}
             onChange={(e) => setUserName(e.target.value)}
             placeholder="Username"
-            // required
+            required
             style={{ borderColor: error && !username ? "red" : "" }}
           />
         </div>
