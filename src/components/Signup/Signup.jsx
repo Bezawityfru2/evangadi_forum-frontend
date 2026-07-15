@@ -51,6 +51,12 @@ const SignUp = ({ visible }) => {
       setShow(false);
       navigate("/login");
     } catch (error) {
+      setIsLoading(false);
+
+      console.log("FULL ERROR:", error);
+      console.log("Response:", error.response);
+      console.log("Data:", error.response?.data);
+
       setError(error.response?.data?.message || "An unexpected error occurred");
     } finally {
       setIsLoading(false);
