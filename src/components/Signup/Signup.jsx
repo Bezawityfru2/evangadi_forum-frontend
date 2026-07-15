@@ -9,8 +9,8 @@ const SignUp = ({ visible }) => {
   const { setShow } = visible;
   const navigate = useNavigate();
   const [username, setUserName] = useState("");
-  const [firstname, setFirstName] = useState("");
-  const [lastname, setLastName] = useState("");
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -25,18 +25,18 @@ const SignUp = ({ visible }) => {
     e.preventDefault();
 
     // Validate required fields
-    if (!username || !firstname || !lastname || !email || !password) {
+    if (!username || !first_name || !last_name || !email || !password) {
       setError("Please fill in all required fields.");
       setIsLoading(false);
       return;
     }
-    console.log({ username, firstname, lastname, email, password });
+    console.log({ username, first_name, last_name, email, password });
     try {
       setIsLoading(true);
       const response = await instance.post("/users/register", {
         username,
-        firstname,
-        lastname,
+        first_name,
+        last_name,
         email,
         password,
       });
@@ -83,10 +83,10 @@ const SignUp = ({ visible }) => {
               size="27"
               type="text"
               placeholder="First name"
-              value={firstname}
+              value={first_name}
               onChange={(e) => setFirstName(e.target.value)}
               required
-              style={{ borderColor: error && !firstname ? "red" : "" }}
+              style={{ borderColor: error && !first_name ? "red" : "" }}
             />
           </div>
 
@@ -96,10 +96,10 @@ const SignUp = ({ visible }) => {
               size="26"
               type="text"
               placeholder="Last name"
-              value={lastname}
+              value={last_name}
               onChange={(e) => setLastName(e.target.value)}
               required
-              style={{ borderColor: error && !lastname ? "red" : "" }}
+              style={{ borderColor: error && !last_name ? "red" : "" }}
             />
           </div>
         </div>
