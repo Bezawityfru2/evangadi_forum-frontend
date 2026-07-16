@@ -12,7 +12,7 @@ function Answer() {
   const [successMessage, setSuccessMessage] = useState("");
   const [question, setQuestion] = useState({ title: "", description: "" });
   const [answers, setAnswers] = useState([]);
-  const [isloading, setIsLoading] = useState(false);
+  const [isloading, setIsLoading] = useState(true);
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -47,8 +47,6 @@ function Answer() {
         console.log("Status:", error.response?.status);
         console.log("Data:", error.response?.data);
         console.error("Error fetching answers:", error);
-
-        setErrorMessage("Failed to load answers.");
       }
     };
 
@@ -85,10 +83,7 @@ function Answer() {
         const { data } = await instance.get(`/answers/${questionId}`);
         setAnswers(data.answers);
       } catch (error) {
-        console.error(
-          "GET answers faield:",
-          error.response?.data || error.message,
-        );
+        console.error("GET answers faield:", error.response?.data || error.message);
       }
     } catch (error) {
       console.error(
