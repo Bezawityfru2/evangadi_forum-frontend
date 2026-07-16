@@ -17,7 +17,6 @@ function Answer() {
 
   useEffect(() => {
     const fetchQuestion = async () => {
-
       try {
         const response = await instance.get(`/questions/${questionId}`, {
           headers: {
@@ -30,7 +29,6 @@ function Answer() {
         });
       } catch (error) {
         console.error("Error fetching question:", error);
-
       } finally {
         setIsLoading(false);
       }
@@ -61,6 +59,9 @@ function Answer() {
   const postAnswer = async (e) => {
     e.preventDefault();
 
+    setErrorMessage("");
+    setSuccessMessage("");
+
     if (!answer.trim()) {
       setErrorMessage("Please provide an answer.");
       return;
@@ -85,6 +86,7 @@ function Answer() {
       setAnswers(data.answers);
     } catch (error) {
       console.error(error);
+      setSuccessMessage("");
       setErrorMessage("Something went wrong. Try again later.");
     }
   };
