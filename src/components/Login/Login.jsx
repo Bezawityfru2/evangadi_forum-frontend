@@ -21,7 +21,6 @@ function Login({ visible }) {
   async function handleSubmit(e) {
     e.preventDefault();
     console.log("🚀 HANDLE SUBMIT WORKING");
-    
 
     setIsLoading(true);
     setErrorMessage("");

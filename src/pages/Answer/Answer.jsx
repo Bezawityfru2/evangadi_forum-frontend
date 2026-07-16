@@ -81,16 +81,24 @@ function Answer() {
 
       setSuccessMessage("Answer posted successfully");
       setAnswer("");
-
-      const { data } = await instance.get(`/answers/${questionId}`);
-      setAnswers(data.answers);
+      try {
+        const { data } = await instance.get(`/answers/${questionId}`);
+        setAnswers(data.answers);
+      } catch (error) {
+        console.error(
+          "GET answers faield:",
+          error.response?.data || error.message,
+        );
+      }
     } catch (error) {
-      console.error(error);
+      console.error(
+        "POST answer fialed:",
+        error.response?.data || error.message,
+      );
       setSuccessMessage("");
       setErrorMessage("Something went wrong. Try again later.");
     }
   };
-
   return (
     <>
       {isloading ? (
@@ -149,5 +157,4 @@ function Answer() {
     </>
   );
 }
-
 export default Answer;
